@@ -1,6 +1,6 @@
 {
   "name": "geohash",
-  "version": "1.0.0",
+  "version": "1.1.1",
   "description": "JavaScript geocoding library",
   "main": "src/geohash.js",
   "scripts": {
