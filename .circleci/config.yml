@@ -3,19 +3,15 @@
 # Check https://circleci.com/docs/2.0/language-javascript/ for more details
 #
 version: 2
+
+defaults: &defaults
+  working_directory: ~/project/geohash
+  docker:
+    - image: circleci/node:8-browsers
+
 jobs:
   build:
-    docker:
-      # specify the version you desire here
-      - image: circleci/node:7.10
-
-      # Specify service dependencies here if necessary
-      # CircleCI maintains a library of pre-built images
-      # documented at https://circleci.com/docs/2.0/circleci-images/
-      # - image: circleci/mongo:3.4.4
-
-    working_directory: ~/repo
-
+    <<: *defaults
     steps:
       - checkout
 
@@ -33,5 +29,22 @@ jobs:
             - node_modules
           key: v1-dependencies-{{ checksum "package.json" }}
 
-      # run tests!
+      - persist_to_workspace:
+          root: ~/project
+          paths:
+            - geohash
+  test-cover:
+    <<: *defaults
+    steps:
+      - attach_workspace:
+          at: ~/project
       - run: yarn test
+
+workflows:
+  version: 2
+  install-and-parallel-test:
+    jobs:
+      - build
+      - test-cover:
+          requires:
+            - build
