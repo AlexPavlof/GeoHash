@@ -1,10 +1,11 @@
 {
   "name": "geohash",
-  "version": "1.1.1",
+  "version": "1.2.0",
   "description": "JavaScript geocoding library",
   "main": "src/geohash.js",
   "scripts": {
     "build": "webpack && NODE_ENV=production webpack",
+    "build:umd": "webpack --env.target=umd --env.fileprefix=geohash.umd",
     "test": "jest && codecov"
   },
   "keywords": [

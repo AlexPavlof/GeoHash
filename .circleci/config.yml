@@ -10,7 +10,7 @@ defaults: &defaults
     - image: circleci/node:8-browsers
 
 jobs:
-  build:
+  install:
     <<: *defaults
     steps:
       - checkout
@@ -50,10 +50,10 @@ workflows:
   version: 2
   install-and-parallel-test:
     jobs:
-      - build
+      - install
       - test-cover:
           requires:
-            - build
+            - install
       - test-types:
           requires:
-            - build
+            - install
