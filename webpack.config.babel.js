@@ -11,6 +11,13 @@ import { main }       from './package.json';
 const prodEnv = 'production';
 
 /**
+ * Defaut target.
+ *
+ * @type {string}
+ */
+const defaultLibraryTarget = 'window';
+
+/**
  * True if buld running in production mode.
  *
  * @type {boolean}
@@ -41,25 +48,38 @@ if (isProduction) {
     }));
 }
 
-export default () => ({
-    entry:  resolve(__dirname, main),
-    output: {
-        library:       'geohash',
-        libraryTarget: 'window',
-        path:          __dirname,
-        filename:      isProduction ? 'build/geohash.min.js' : 'build/geohash.js',
-    },
-    mode:   isProduction ? prodEnv : 'development',
-    cache:  true,
-    plugins,
-    module: {
-        rules: [
-            {
-                test:    /\.js?$/,
-                exclude: /node_modules/,
-                loader:  'babel-loader',
-            },
-        ],
-    },
-    devtool: isProduction ? 'none' : 'source-map',
-});
+export default (env) => {
+    env = env || {};
+
+    const { target, fileprefix } = env;
+    let filename                 = 'geohash.js';
+
+    if (isProduction && target !== 'umd') {
+        filename = 'geohash.min.js';
+    } else if (target === 'umd') {
+        filename = `${fileprefix}.js`;
+    }
+
+    return {
+        entry:  resolve(__dirname, main),
+        output: {
+            library:       'geohash',
+            libraryTarget: target || defaultLibraryTarget,
+            path:          `${__dirname}/build`,
+            filename,
+        },
+        mode:   isProduction ? prodEnv : 'development',
+        cache:  true,
+        plugins,
+        module: {
+            rules: [
+                {
+                    test:    /\.js?$/,
+                    exclude: /node_modules/,
+                    loader:  'babel-loader',
+                },
+            ],
+        },
+        devtool: isProduction || target === 'umd' ? 'none' : 'source-map',
+    };
+};
