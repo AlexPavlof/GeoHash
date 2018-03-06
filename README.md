@@ -1,11 +1,6 @@
 # GeoHash
 
-<p align="center">
-  <a href="https://circleci.com/gh/AlexPavlof/GeoHash/tree/master"><img src="https://img.shields.io/circleci/project/AlexPavlof/GeoHash/master.svg" alt="Build Status"></a>
-  <a href="https://codecov.io/github/AlexPavlof/GeoHash?branch=master"><img src="https://img.shields.io/codecov/c/github/AlexPavlof/GeoHash/master.svg" alt="Coverage Status"></a>
-  <a href="https://github.com/AlexPavlof/GeoHash/issues"><img src="https://img.shields.io/github/issues/AlexPavlof/GeoHash.svg" alt="GitHub issues"></a>
-  <a href="https://github.com/AlexPavlof/GeoHash/blob/master/LICENSE"><img src="https://img.shields.io/github/license/AlexPavlof/GeoHash.svg" alt="GitHub license"></a>
-</p>
+[![NPM Version][npm-image]][npm-url] [![Build status][build-image]][build-url] [![Coverage status][coverage-image]][coverage-url] [![Dependency Status][david-image]][david-url] [![devDependency Status][david-dev-image]][david-dev-url] [![GitHub license][license-image]][license-url]
 
 Geohash is a public domain geocoding system invented by Gustavo Niemeyer, which encodes a geographic location into a short string of letters and digits. It is a hierarchical spatial data structure which subdivides space into buckets of grid shape, which is one of the many applications of what is known as a Z-order curve, and generally space-filling curves.
 
@@ -30,3 +25,16 @@ $ yarn add @alexpavlov/geohash-js
 ## License
 
 [MIT](http://opensource.org/licenses/MIT)
+
+[npm-url]: https://www.npmjs.com/package/@alexpavlov/geohash-js
+[npm-image]: https://img.shields.io/npm/v/@alexpavlov/geohash-js.svg
+[david-url]: https://david-dm.org/AlexPavlof/GeoHash#info=dependencies
+[david-image]: https://img.shields.io/david/AlexPavlof/GeoHash.svg
+[david-dev-url]: https://david-dm.org/AlexPavlof/GeoHash#info=devDependencies
+[david-dev-image]: https://img.shields.io/david/dev/AlexPavlof/GeoHash.svg
+[build-url]: https://circleci.com/gh/AlexPavlof/GeoHash/tree/master
+[build-image]: https://img.shields.io/circleci/project/AlexPavlof/GeoHash/master.svg
+[coverage-url]: https://codecov.io/github/AlexPavlof/GeoHash?branch=master
+[coverage-image]: https://img.shields.io/codecov/c/github/AlexPavlof/GeoHash/master.svg
+[license-url]:https://github.com/AlexPavlof/GeoHash/blob/master/LICENSE
+[license-image]: https://img.shields.io/github/license/AlexPavlof/GeoHash.svg
