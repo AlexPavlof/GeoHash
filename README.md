@@ -8,7 +8,25 @@ Geohashes offer properties like arbitrary precision and the possibility of gradu
 
 Read more on [Wikipedia](https://en.wikipedia.org/wiki/Geohash).
 
-## Installation
+## Usage
+
+### Standalone version
+
+Include <code>geohash.min.js</code> which you can find in the build folder.
+
+```html
+<script src="dist/geohash-js/geohash.min.js"></script>
+```
+
+Now you can use library
+
+```javascript
+var hashedValue = geohash.encode(52.372518, 4.896977);
+```
+
+### Usage as module
+
+#### Installation
 
 With npm
 
@@ -20,6 +38,23 @@ or with yarn
 
 ``` bash
 $ yarn add @alexpavlov/geohash-js
+```
+
+#### Add to your module
+
+CommonJS
+
+```javascript
+var encode = require('@alexpavlov/geohash-js').encode;
+
+var hashedValue = encode(52.372518, 4.896977);
+```
+ES2015
+
+```javascript 
+import { encode } from '@alexpavlov/geohash-js';
+
+let hashedValue = encode(52.372518, 4.896977);
 ```
 
 ## License
