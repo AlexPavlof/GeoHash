@@ -65,10 +65,10 @@ let hashedValue = encode(52.372518, 4.896977);
 [npm-image]: https://img.shields.io/npm/v/@alexpavlov/geohash-js.svg
 [david-url]: https://david-dm.org/AlexPavlof/GeoHash#info=dependencies
 [david-image]: https://img.shields.io/david/AlexPavlof/GeoHash.svg
-[david-dev-url]: https://david-dm.org/AlexPavlof/GeoHash#info=devDependencies
+[david-dev-url]: https://david-dm.org/AlexPavlof/GeoHash?type=dev
 [david-dev-image]: https://img.shields.io/david/dev/AlexPavlof/GeoHash.svg
 [build-url]: https://circleci.com/gh/AlexPavlof/GeoHash/tree/master
-[build-image]: https://img.shields.io/circleci/project/AlexPavlof/GeoHash/master.svg
+[build-image]: https://img.shields.io/circleci/project/github/AlexPavlof/GeoHash/master.svg
 [coverage-url]: https://codecov.io/github/AlexPavlof/GeoHash?branch=master
 [coverage-image]: https://img.shields.io/codecov/c/github/AlexPavlof/GeoHash/master.svg
 [license-url]:https://github.com/AlexPavlof/GeoHash/blob/master/LICENSE
