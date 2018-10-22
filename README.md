@@ -45,14 +45,14 @@ $ yarn add @alexpavlov/geohash-js
 CommonJS
 
 ```javascript
-var encode = require('@alexpavlov/geohash-js/build/geohash.umd').encode;
+var encode = require('@alexpavlov/geohash-js').encode;
 
 var hashedValue = encode(52.372518, 4.896977);
 ```
 ES2015
 
 ```javascript
-import { encode } from '@alexpavlov/geohash-js/build/geohash.umd';
+import { encode } from '@alexpavlov/geohash-js';
 
 let hashedValue = encode(52.372518, 4.896977);
 ```
