@@ -33,12 +33,22 @@ jobs:
           root: ~/project
           paths:
             - geohash
+  build:
+    <<: *defaults
+    steps:
+      - attach_workspace:
+          at: ~/project
+      - run: yarn build
+      - run: yarn build:minify
   test-cover:
     <<: *defaults
     steps:
       - attach_workspace:
           at: ~/project
       - run: yarn test
+      - store_artifacts:
+          path: coverage
+          prefix: coverage
   test-types:
     <<: *defaults
     steps:
